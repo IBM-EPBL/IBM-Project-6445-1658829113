@@ -1,0 +1,314 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.css">
+
+    <title> 
+Submit
+</title>
+    <style>
+        .bg {
+
+            background-image: url("images/background.jpeg");
+
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .file-upload input[type='file'] {
+            display: none;
+        }
+
+        body {
+            background-color: #4ECC5A;
+            /* background: -webkit-linear-gradient(to right, #66a776, #043610);
+            background: linear-gradient(to right, #5d9c6a, #059b0d); */
+            height: 100vh;
+        }
+
+        .rounded-lg {
+            border-radius: 1rem;
+        }
+
+        .custom-file-label.rounded-pill {
+            border-radius: 50rem;
+        }
+
+        .custom-file-label.rounded-pill::after {
+            border-radius: 0 50rem 50rem 0;
+        }
+
+        label {
+            background-color: rgb(2, 46, 15);
+            color: white;
+            padding: 0.5rem;
+            font-family: sans-serif;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #file-chosen {
+            margin-left: 0.3rem;
+            font-family: sans-serif;
+        }
+
+        .footer-basic {
+            padding: 40px 0;
+            background-color: #042908;
+            color: #f1f3f5;
+        }
+
+        .footer-basic ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer-basic li {
+            padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .social {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .footer-basic .social>a {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin: 0 8px;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-basic .social>a:hover {
+            opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#05380b;">
+            <!-- <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="navbar-brand active">
+                    <a class="nav-link" href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/home.html" style="color: white;">Home</a>
+                </li>
+                <li class="navbar-brand active">
+                    <a class="nav-link" href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/index.html" style="color: white;">AI Engine</a>
+                </li>
+                <li class="navbar-brand">
+                    <a class="nav-link" href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/market.html" style="color: white;">Supplements</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+
+<style>
+  #loading {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    display: block;
+    z-index: 99
+  }
+
+  #loading-image {
+    position: absolute;
+    top: 25%;
+    left: 38%;  
+    z-index: 100
+  }
+
+  #after-loading , #navigation , #footer{
+    display: none;
+  }
+
+</style>
+
+<div id="loading">
+  <img id="loading-image" src="https://plant-disease-detection-ai.herokuapp.com/static/double_gear.gif" height="350" width="350" alt="Loading..." />
+</div>
+
+<div id="after-loading">
+  <<div>
+    <div class="container">
+      <!-- For demo purpose -->
+      <div class="row mb-5 text-center text-white">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);""><b>{{title}}🍂</b></h1>
+        </div>
+      </div>
+      <center>
+      <div class=" col">
+            <div class="p-3 bg-white shadow rounded-lg" style="width: 30%;">
+  
+              <img src={{image_url}} width="350" height="350">
+  
+            </div>
+        </div>
+        </center>
+        <br>
+        <div class=" row ">
+          <div class="col mx-auto">
+            <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+  
+              <h5><b>
+                  {% if pred==3 or pred==5 or pred==7 or pred==11 or pred==15 or pred==18 or pred==20 or pred==23 or
+                  pred==24 or pred==25 or pred==28 or pred==38 %}
+                  Tips to Grow Healthy Plants :
+                  {% else %}
+                  Brief Descritpion :
+                  {% endif %}
+                </b></h5>
+              <p>{{desc}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mx-auto">
+            <div class="p-5 bg-white shadow rounded-lg" style="height:95%">
+              <h5><b>
+                  {% if pred==3 or pred==5 or pred==7 or pred==11 or pred==15 or pred==18 or pred==20 or pred==23 or
+                  pred==24 or pred==25 or pred==28 or pred==38 %}
+                  Benefits :
+                  {% else %}
+                  Prevent This Plant Disease By follow below steps :
+                  {% endif %}
+                </b></h5>
+              <p>
+                {{prevent}}
+              </p>
+            </div>
+          </div>
+  
+          {% if pred!=4 %}
+          <div class="col mx-auto"">
+          <div class=" p-5 bg-white shadow rounded-lg" style="height: 95%;">
+            <center>
+              <h5><b>
+                  {% if pred==3 or pred==5 or pred==7 or pred==11 or pred==15 or pred==18 or pred==20 or pred==23 or
+                  pred==24 or pred==25 or pred==28 or pred==38 %}
+                  Fertilizer :
+                  {% else %}
+                  Supplements :
+                  {% endif %}
+                </b></h5>
+              <br>
+              <img src={{simage}} width="300" height="350">
+              <br>
+              <br>
+              <h6>{{sname}}</h6>
+  
+              <a target="_blank" href={{buy_link}}><button type="button" class="btn btn-success"
+                  style="background-color: #05380b;">Buy Product</button></a>
+            </center>
+          </div>
+        </div>
+        {% endif %}
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    document.getElementById("loading").style.display = "none"
+    document.getElementById("navigation").style.display = "unset";
+    document.getElementById("footer").style.display = "unset";
+    document.getElementById("after-loading").style.display = "unset";
+  }
+</script>
+
+    <div id='footer'>
+        <div class="footer-basic">
+            <footer>
+                
+                <br>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/home.html">Home</a></li>
+                  <li class="list-inline-item laptop"><a href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/index.html">AI Engine</a></li>
+              
+                </ul>
+                <p class="copyright">Created by 🍀BioVelan🍀 Team</p>
+            </footer>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+<!-- <script>
+    if (window.matchMedia("(max-width: 767px)").matches)
+    {
+        // The viewport is less than 768 pixels wide
+        document.write("This is a mobile device.");
+        window.location.replace('/mobile-device');
+
+    } else {
+        
+        // The viewport is at least 768 pixels wide
+        document.write("This is a tablet or desktop.");
+    }
+</script> -->
+<!-- <script>
+    if(screen.width <= 700){
+        document.location = 'manthan2.html';
+    }
+</script> -->
+
+</html>

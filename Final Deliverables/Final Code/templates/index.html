@@ -1,0 +1,280 @@
+
+<html>
+    <!doctype html>
+    <html lang="en">
+    
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.css">
+    
+        <title> 
+    AI Engine
+    </title>
+        <style>
+            .bg {
+    
+                background-image: url("images/background.jpeg");
+    
+                height: 100%;
+    
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+    
+            .file-upload input[type='file'] {
+                display: none;
+            }
+    
+            body {
+                background-color: #4ECC5A;
+                /* background: -webkit-linear-gradient(to right, #66a776, #043610);
+                background: linear-gradient(to right, #5d9c6a, #059b0d); */
+                height: 100vh;
+            }
+    
+            .rounded-lg {
+                border-radius: 1rem;
+            }
+    
+            .custom-file-label.rounded-pill {
+                border-radius: 50rem;
+            }
+    
+            .custom-file-label.rounded-pill::after {
+                border-radius: 0 50rem 50rem 0;
+            }
+    
+            label {
+                background-color: rgb(2, 46, 15);
+                color: white;
+                padding: 0.5rem;
+                font-family: sans-serif;
+                border-radius: 0.3rem;
+                cursor: pointer;
+                margin-top: 1rem;
+            }
+    
+            #file-chosen {
+                margin-left: 0.3rem;
+                font-family: sans-serif;
+            }
+    
+            .footer-basic {
+                padding: 40px 0;
+                background-color: #042908;
+                color: #f1f3f5;
+            }
+    
+            .footer-basic ul {
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 0;
+            }
+    
+            .footer-basic li {
+                padding: 0 10px;
+            }
+    
+            .footer-basic ul a {
+                color: inherit;
+                text-decoration: none;
+                opacity: 0.8;
+            }
+    
+            .footer-basic ul a:hover {
+                opacity: 1;
+            }
+    
+            .footer-basic .social {
+                text-align: center;
+                padding-bottom: 25px;
+            }
+    
+            .footer-basic .social>a {
+                font-size: 24px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                margin: 0 8px;
+                color: inherit;
+                opacity: 0.75;
+            }
+    
+            .footer-basic .social>a:hover {
+                opacity: 0.9;
+            }
+    
+            .footer-basic .copyright {
+                margin-top: 15px;
+                text-align: center;
+                font-size: 13px;
+                color: #aaa;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="navigation">
+            <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#05380b;">
+                <!-- <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button> -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="navbar-brand active">
+                            <a class="nav-link" href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/home.html" style="color: white;">Home</a>
+                        </li>
+                        <li class="navbar-brand active">
+                            <a class="nav-link" href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/index.html" style="color: white;">AI Engine</a>
+                        </li>
+                        <li class="navbar-brand">
+                            <a class="nav-link" href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/market.html" style="color: white;">Supplements</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+    <div>
+        <div class="container">
+            <!-- For demo purpose -->
+            <div class="row mb-5 text-center text-white">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>🍀AI Engine🍀</b></h1>
+                    <p class="lead" style="font-weight: 500;color: black;">Let AI Engine Will Help You To Detect Disease</p>
+                </div>
+            </div>
+            <!-- End -->
+            <div class="row ">
+                <div class="col mx-auto">
+                    <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+    
+                        <h5><b>Why is it necessary to detect disease in plant ?</b></h5>
+                        <p>Plant diseases affect the growth of their respective species. In addition, some research gaps are
+                            identified from which to obtain greater transparency for detecting diseases in plants, even
+                            before their symptoms appear clearly.
+                            diagnosis is one of the most important aspects of a plant pathologist's training. Without proper
+                            identification of the disease and the disease-causing agent, disease control measures can be a
+                            waste of time and money and can lead to further plant losses. Proper disease diagnosis is
+                            necessary.
+                        </p>
+                    </div>
+                </div>
+                <div class="col mx-auto">
+                    <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;"><img
+                            src="https://www.pngjoy.com/pngl/250/4840262_plants-png-indoors-tropical-plant-png-hd-png.png "
+                            height="300" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+    
+                        <!-- Default bootstrap file upload-->
+    
+                        <form action="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/submit.html" method="POST" enctype="multipart/form-data">
+                            <div class="custom-file overflow-hidden mb-4">
+                                <input type="file" id="actual-btn" hidden name="image" />
+                                <label for="actual-btn">Choose File</label>
+                                <span id="file-chosen">No file chosen</span>
+                            </div>
+    
+                            <!-- End -->
+    
+                            <h6 class="text-center mb-4 text-muted">
+                                Simply upload your plant's leaf image and then see the magic of AI.
+                            </h6>
+    
+                            <!-- Custom bootstrap upload file-->
+                            <center>
+                                <a class="mx-2"><button type="submit" class="btn btn-outline-success">Submit</button></a>
+                            </center>
+                        </form>
+                        <!-- End -->
+    
+                    </div>
+                </div>
+                <div class="col mx-auto">
+                    <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+                        <h5><b>Prevent Plant Disease follow below steps:</b></h5>
+                        <ol>
+                            <li>Follow Good Sanitation Practices.</li>
+                            <li>Fertilize to Keep Your Plants Healthy.</li>
+                            <li>Inspect Plants for Diseases Before You Bring Them Home.</li>
+                            <li>Allow the Soil to Warm Before Planting.</li>
+                            <li>Ensure a Healthy Vegetable Garden By Rotating Crops.</li>
+                            <li>Provide Good Air Circulation</li>
+                            <li>Remove Diseased Stems and Foliage</li>
+                        </ol>
+                        <a target="_blank" href="https://www.thespruce.com/prevent-plant-diseases-in-your-garden-2539511"
+                            class="mx-2"><button type="button" class="btn btn-outline-success">More info</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const actualBtn = document.getElementById('actual-btn');
+    
+        const fileChosen = document.getElementById('file-chosen');
+    
+        actualBtn.addEventListener('change', function () {
+            fileChosen.textContent = this.files[0].name
+        })
+    </script>
+    
+    
+        <div id='footer'>
+            <div class="footer-basic">
+                <footer>
+                    
+                    <br>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/home.html">Home</a></li>
+                        <li class="list-inline-item laptop"><a href="D:/Plant-Disease-Detection-main/Plant-Disease-Detection-main/Flask Deployed App/templates/index.html">AI Engine</a></li>
+                        
+                    </ul>
+                    <p class="copyright">Created by 🍀BioVelan🍀 Team</p>
+                </footer>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        </div>
+    </body>
+    <!-- <script>
+        if (window.matchMedia("(max-width: 767px)").matches)
+        {
+            // The viewport is less than 768 pixels wide
+            document.write("This is a mobile device.");
+            window.location.replace('/mobile-device');
+    
+        } else {
+            
+            // The viewport is at least 768 pixels wide
+            document.write("This is a tablet or desktop.");
+        }
+    </script> -->
+    <!-- <script>
+        if(screen.width <= 700){
+            document.location = 'manthan2.html';
+        }
+    </script> -->
+    
+    </html>
