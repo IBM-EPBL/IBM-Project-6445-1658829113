@@ -5,13 +5,13 @@ Fertilizers Recommendation System For Disease Prediction
 Team Member 1 - Tharakhamurthy
 
 
-Team Member 2 - Yaswanth 
+Team Member 2 - Thiruselvam
 
 
-Team Member 3 - Thiruselvam 
+Team Member 3 - Subash
 
 
-Team Member 4 - Subash 
+Team Member 4 - Yaswanth
 
 
 
